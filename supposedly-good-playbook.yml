@@ -2,14 +2,21 @@
 #Supposedly good playbook
 - name: configuration
   hosts: all
-  gather_facts: false # remove later! speeds up testing
+  gather_facts: true
   become: true
   roles:
     - repo
 
 - name: deploy haproxy
   hosts: frontends
-  gather_facts: false # remove later! speeds up testing
+  gather_facts: true
   become: true
   roles:
     - haproxy
+
+- name: deploy tomcat
+  hosts: apps
+  gather_facts: true
+  become: true
+  roles:
+    - tomcat
