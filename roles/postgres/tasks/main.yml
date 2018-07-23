@@ -17,3 +17,8 @@
     command: postgresql-setup initdb
   - name: initilize postgres some more
     command: chkconfig postgresql on
+
+  - name: start postgres
+    service:
+      name: postgresql.service
+      state: started
