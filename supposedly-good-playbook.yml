@@ -20,4 +20,3 @@
   become: true
   roles:
     - tomcat
-    - index_setup
