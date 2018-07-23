@@ -14,9 +14,10 @@
   roles:
     - haproxy
 
-- name: deploy tomcat
+- name: deploy tomcat and copy index.html
   hosts: apps
   gather_facts: true
   become: true
   roles:
     - tomcat
+    - index_setup

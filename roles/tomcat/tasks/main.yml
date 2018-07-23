@@ -16,7 +16,7 @@
 
   - name: copy static index.html to tomcat webapps/ansible/index.html
     template:
-      src: index.html.j2
+      src: templates/index.html.j2
       dest: /usr/share/tomcat/webapps/ROOT/index.html
       mode: 0644
 
@@ -24,25 +24,3 @@
     service:
       name: tomcat
       state: started
-
-- name: index.html on app 1
-  hosts: app1
-  gather_facts: false
-  become: true
-
-  tasks:
-  - name: copy static index.html to tomcat webapps/ansible/index.html
-    template:
-      src: index.html.app1
-      dest: /usr/share/tomcat/webapps/ansible/index.html
-
-- name: index.html on app 1
-  hosts: app2
-  gather_facts: false
-  become: true
-
-  tasks:
-  - name: copy static index.html to tomcat webapps/ansible/index.html
-    template:
-      src: index.html.app2
-      dest: /usr/share/tomcat/webapps/ansible/index.html
