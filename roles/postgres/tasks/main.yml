@@ -1,0 +1,13 @@
+---
+# This role will install Postgres DB
+- name: install progress
+  yum:
+      name: postgresql-server
+      state: latest
+  - name: Checking status of Postgres
+    service:
+      name: postgresql
+      enabled: yes
+  - name: tell user to finish setting up postgres
+    debug:
+      msg: "Either uncomment the postgres setup or manually login and initialize"
