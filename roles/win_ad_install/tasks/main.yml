@@ -6,10 +6,10 @@
       name: AD-Domain-Services
       state: present
   - win_domain:
-      dns_domain_name: {{ ad_domain_name }}
-      safe_mode_password: {{ ad_safe_mode_password }}
+      dns_domain_name: {{"ad_domain_name"}}
+      safe_mode_password: {{"ad_safe_mode_password"}}
   - win_reboot: 
       reboot_timeout_sec: 3600
     when: reboot_required
   - name: Prints out the domain list
-    shell: nltest /dclist:"{{ ad_domain_name }}"
+    shell: nltest /dclist:"{{"ad_domain_name"}}"
