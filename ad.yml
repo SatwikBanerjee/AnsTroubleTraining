@@ -1,0 +1,8 @@
+---
+
+# Playbook to install AD
+
+- name: Run role to install AD
+  hosts: windows
+  roles:
+    - win_ad_install
