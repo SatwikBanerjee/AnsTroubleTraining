@@ -1,8 +1,6 @@
 ---
 # Creating Win SSH service
 
-    - name: gather_facts
-      gather_facts: true
     - win_chocolatey: name={{ item }} state=installed
       with_items:
         - "{{ package_name }}"
