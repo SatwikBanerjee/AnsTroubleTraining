@@ -1,0 +1,6 @@
+---
+
+#Playbook to install ssh
+- hosts: windows
+  roles:
+    - win_service_config
