@@ -1,9 +1,8 @@
 ---
 # Creating Win SSH service
 
-    -name gather_facts
+    - name: gather_facts
       gather_facts: true
-      when: ansible_distribution == "Microsoft Windows Server 2012 R2 Standard"
     - win_chocolatey: name={{ item }} state=installed
         with_items:
           - "{{ package_name }}"
