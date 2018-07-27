@@ -1,4 +1,10 @@
 ---
+
+- name: Create in-memery inventory
+  hosts: jumpbox
+  roles:
+    - osp-facts
+
 #Supposedly good playbook
 - name: configuration
   hosts: all
