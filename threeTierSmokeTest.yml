@@ -1,4 +1,11 @@
-- hosts: workstation
+---
+
+- name: Create in-memery inventory
+  hosts: jumpbox
+  roles:
+    - osp-facts
+
+- hosts: jumpbox
   gather_facts: false
   tasks:
   - name: OpenStack servers
