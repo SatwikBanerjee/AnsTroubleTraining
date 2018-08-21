@@ -1,7 +1,7 @@
 ---
 
 - name: Create in-memery inventory
-  hosts: jumpbox
+  hosts: localhost
   roles:
     - osp-facts
 
